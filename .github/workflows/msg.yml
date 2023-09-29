@@ -1,0 +1,15 @@
+name: "Executing Job"
+on: [push]
+jobs:
+  Job-Message-Actions-Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Welcome to Shell IDA"
+      - run: echo "Current OS is ${{runner.os}} "
+      - run: echo "Github Event Name is ${{github.event_name}} "
+      - run: pwd
+      - run: echo "Checking inside Current user home directory"
+      - run: ls ~
+      - run: echo "Checking inside github workspace"
+      - run: ls ${{github.workspace}}
